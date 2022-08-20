@@ -1,0 +1,22 @@
+.wrapperItems {
+  display: flex;
+
+}
+
+.item:not(:last-child) {
+  margin-right: 55px;
+}
+
+.item {
+  line-height: 25px;
+}
+
+.item:hover {
+  a {
+    border-bottom: 3px solid #000;
+  }
+}
+
+.link {
+  color: #000;
+}
