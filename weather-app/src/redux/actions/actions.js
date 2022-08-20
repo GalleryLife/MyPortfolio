@@ -1,0 +1,4 @@
+export const SET_BASE_WEATHER = 'GET_BASE_WEATHER';
+export const GET_WEATHER = 'GET_WEATHER';
+export const SEARCH_PLACE = 'SEARCH_PLACE';
+export const SET_ISLOADING = 'SET_ISLOADING';
