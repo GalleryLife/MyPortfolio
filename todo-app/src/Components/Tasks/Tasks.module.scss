@@ -1,0 +1,37 @@
+.task {
+  border-radius: 10px;
+  margin: 0 auto 15px auto;
+  text-align: center;
+  padding: 5px 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: linear 1s;
+
+  &:hover {
+    box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.50);
+  }
+}
+
+.changeTask {
+  border: none;
+  border-bottom: 1px solid #2C2C2C;
+  outline: 0;
+}
+
+.value {
+  word-break: break-word;
+}
+
+.actions {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.removeIcon {
+  cursor: pointer;
+}
+
+
