@@ -8,13 +8,13 @@ const CatalogItem = ({id, image, price, title, description}: IGods) => {
   const dispatch = useDispatch()
   const [isMore, setMore] = useState(false)
   const handleChange = () => setMore(!isMore)
-  const handleAddToCart = () => dispatch(addToCart(title, id))
+  const handleAddToCart = () => dispatch(addToCart(id, title, image, price))
 
   return (
     <div className={styles.wrapper}>
       <img width={80} height={100} src={image} alt={title}/>
       <div className={styles.itemInfo}>
-        <h2>{title}</h2>
+        <h2>{title.slice(0, 21)}</h2>
         <span>{price}$</span>
         <p>{isMore ? description : ''}</p>
       </div>

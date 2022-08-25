@@ -1,0 +1,49 @@
+.wrapper {
+  font-size: 18px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  border-radius:  0 0 10px 10px;
+  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.50);
+  padding: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.20) ;
+
+  img {
+    display: inline-block;
+    margin-right: 25px;
+  }
+  h3 {
+    font-weight: 600;
+    margin-right: 35px;
+  }
+}
+
+.iconWrapper {
+  margin-bottom: 20px;
+}
+
+.closeIcon {
+  position: absolute;
+  cursor: pointer;
+  top: 15px;
+  left: 10px;
+}
+
+.countWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.actionsWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+
+  button {
+    background-color: inherit;
+    border-color: deepskyblue;
+    cursor: pointer;
+  }
+}

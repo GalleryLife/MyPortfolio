@@ -1,6 +1,8 @@
 export interface IGodsInitialState {
   gods: IGods[]
   status: boolean
+  searchValue: string
+  category: string[]
 }
 
 export interface IGods {
@@ -16,4 +18,12 @@ export interface IGods {
 interface IRating {
   rate: number
   count: number
+}
+
+export interface IFilterState {
+  search: ISearch
+}
+
+interface ISearch {
+  value: string
 }

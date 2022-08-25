@@ -5,10 +5,12 @@ import {ShoppingCartOutlined} from '@ant-design/icons'
 import Catalog from './components/Catalog/Catalog';
 import {Link, Route, Routes} from 'react-router-dom';
 import Cart from './components/Cart/Cart';
+import Modal from './components/Modal/Modal';
 
 const App: React.FC = () => {
   return (
     <div className={styles.appWrapper}>
+      <Modal/>
       <header className={styles.header}>
         <NavMenu/>
         <a href='./' className={styles.logo}>
