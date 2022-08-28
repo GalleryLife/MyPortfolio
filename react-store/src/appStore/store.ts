@@ -13,7 +13,7 @@ import {
 import storage from 'redux-persist/lib/storage'
 import godsSlice from '../features/godsSlice';
 import cartSLice from '../features/cartSlice';
-import purchaseSlice from '../features/purchaseSlice';
+import purchaseSlice from '../features/modalSlice';
 
 const persistConfig = {
   key: 'cart',

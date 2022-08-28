@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from '../Cart.module.scss';
-import {CloseOutlined, ArrowUpOutlined, ArrowDownOutlined} from '@ant-design/icons';
+import styles from './CartItem.module.scss';
 import {useAppDispatch} from '../../../hooks/useTypedSelector';
+import {CloseOutlined, ArrowUpOutlined, ArrowDownOutlined} from '@ant-design/icons';
 import {removeFromCart, incrementCount, decrementCount} from '../../../features/cartSlice';
 
 interface IProps {
@@ -16,26 +16,27 @@ const CartItem = ({id, title, img, price, count}: IProps) => {
   const dispatch = useAppDispatch()
   const handleRemoveItem = () => dispatch(removeFromCart(id))
   const handleIncrement = () => dispatch(incrementCount(id, count))
-  const handleDecrement = () => {
+  const handleDecrement = (): void => {
     dispatch(decrementCount(id, count))
     if(count < 1) dispatch(removeFromCart(id))
   }
+
   return (
     <>
       <div className={styles.wrapper}>
-        <div className={styles.imgWrapper}>
-          <div className={styles.iconWrapper}>
+        <div>
+          <div className={styles.wrapper__icon}>
             <CloseOutlined
               onClick={handleRemoveItem}
-              className={styles.closeIcon}/>
+              className={styles.icon}/>
           </div>
           <img width={80} src={img} alt={title}/>
         </div>
         <h3>{title}</h3>
-        <span>{price * count}$</span>
-        <div className={styles.countWrapper}>
+        <span>{price * count}&#8372;</span>
+        <div className={styles.wrapper__count}>
           <span>{count}</span>
-          <div className={styles.actionsWrapper}>
+          <div className={styles.count__actions}>
             <button
               onClick={handleIncrement}
             ><ArrowUpOutlined/></button>

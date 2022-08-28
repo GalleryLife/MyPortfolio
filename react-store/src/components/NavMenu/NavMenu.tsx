@@ -1,24 +1,17 @@
 import React from 'react';
-import styles from './NavMenu.module.scss'
 import {Link} from 'react-router-dom'
+import styles from './NavMenu.module.scss'
 
-function NavMenu() {
-  return (
-    <div>
-      <header>
-        <nav>
-          <ul className={styles.wrapperItems}>
-            <li className={styles.item}>
-              <Link to='/profile' className={styles.link}>Profile</Link></li>
-            <li className={styles.item}>
-              <Link to='/' className={styles.link}>Shop</Link></li>
-            <li className={styles.item}>
-              <Link to='/about' className={styles.link}>About Us</Link></li>
-          </ul>
-        </nav>
-      </header>
-    </div>
-  );
+type PropsTyped = {
+  rout: string
+  text: string | React.ReactElement
 }
+
+const NavMenu = ({rout, text}: PropsTyped) => (
+  <li className={styles.wrapper__link}>
+    <Link to={rout} className={styles.link}>{text}</Link>
+  </li>
+);
+
 
 export default NavMenu;

@@ -42,7 +42,8 @@
         "warn",
         "prefer-single"
       ],
-      "no-console": "warn"
+      "no-console": "warn",
+      "no-template-curly-in-string": "off"
     }
   },
   "browserslist": {
@@ -61,11 +62,14 @@
     "@reduxjs/toolkit": "^1.8.4",
     "@types/react-redux": "^7.1.24",
     "axios": "^0.27.2",
+    "classnames": "^2.3.1",
+    "formik": "^2.2.9",
     "react-redux": "^8.0.2",
     "react-router": "^6.3.0",
     "react-router-dom": "^6.3.0",
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.4.1",
-    "sass": "^1.54.4"
+    "sass": "^1.54.4",
+    "yup": "^0.32.11"
   }
 }

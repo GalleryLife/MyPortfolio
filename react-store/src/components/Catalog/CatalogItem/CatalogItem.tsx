@@ -1,34 +1,27 @@
-import React, {useState} from 'react';
-import {IGods} from '../../../types/gods-types';
-import styles from './CatalogItem.module.scss'
+import React from 'react';
+import {Button} from 'antd';
 import {useDispatch} from 'react-redux';
+import styles from './CatalogItem.module.scss'
+import {PlusOutlined} from '@ant-design/icons';
 import {addToCart} from '../../../features/cartSlice';
 
-const CatalogItem = ({id, image, price, title, description}: IGods) => {
+const CatalogItem = ({id, img, price, title}: any) => {
   const dispatch = useDispatch()
-  const [isMore, setMore] = useState(false)
-  const handleChange = () => setMore(!isMore)
-  const handleAddToCart = () => dispatch(addToCart(id, title, image, price))
+  const handleAddToCart = () => dispatch(addToCart(id, title, img, price))
 
   return (
     <div className={styles.wrapper}>
-      <img width={80} height={100} src={image} alt={title}/>
-      <div className={styles.itemInfo}>
+      <img src={img} alt={title}/>
+      <div className={styles.wrapper__info}>
         <h2>{title.slice(0, 21)}</h2>
-        <span>{price}$</span>
-        <p>{isMore ? description : ''}</p>
+        <span>{price}&#8372;</span>
       </div>
-      <div className={styles.actions}>
-        <button
-          className={styles.button}
-          onClick={handleChange}
-        >{isMore ? 'Less more' : 'See more'}
-        </button>
-        <button
+      <div>
+        <Button
           onClick={handleAddToCart}
-          className={styles.button}
+          icon={<PlusOutlined />}
         >Add to cart
-        </button>
+        </Button>
       </div>
     </div>
   );

@@ -1,0 +1,220 @@
+{
+  "gods": [
+    {
+      "id": 1,
+      "img": "./img/mClothing/1.jpg",
+      "title": "Пижама Atlantic NMP-346 ZOL/S Желтая",
+      "price": 1399
+    },
+    {
+      "id": 2,
+      "img": "./img/mClothing/2.jpg",
+      "title": "Футболка Columbia 1680051-108",
+      "price": 699
+    },
+    {
+      "id": 3,
+      "img": "./img/mClothing/3.jpg",
+      "title": "Спортивные шорты Nike M Nk Df Lge Knit II Short NB BV6852-100",
+      "price": 499
+    },
+    {
+      "id": 4,
+      "img": "./img/mClothing/4.jpg",
+      "title": "Куртка Columbia 1997871-010",
+      "price": 3690
+    },
+    {
+      "id": 5,
+      "img": "./img/mClothing/5.jpg",
+      "title": "Шорты Puma ESS Woven Shorts 8' 57605601 Puma Black",
+      "price": 750
+    },
+    {
+      "id": 6,
+      "img": "./img/mClothing/6.jpg",
+      "title": "Спортивные штаны Puma Ess Jersey Pants 58674701 Puma Black",
+      "price": 990
+    },
+    {
+      "id": 7,
+      "img": "./img/mClothing/7.jpg",
+      "title": "Джинсы Levi's 511 Slim 04511-5240 Hard Worn",
+      "price": 3200
+    },
+    {
+      "id": 8,
+      "img": "./img/mClothing/8.jpg",
+      "title": "Футболка Koton 2YAM12095LK000 White",
+      "price": 209
+    },
+    {
+      "id": 9,
+      "img": "./img/mClothing/9.jpg",
+      "title": "Худи ROZA 1707061 Черное",
+      "price": 595
+    },
+    {
+      "id": 10,
+      "img": "./img/mClothing/10.jpg",
+      "title": "Футболка Sol's Imperial 190 I'Am Ukrainian 11500309/138 Черная",
+      "price": 341
+    },
+    {
+      "id": 11,
+      "img": "./img/wClothing/1.jpg",
+      "title": "Спортивные штаны Puma HER Wide Pants 58596802 White",
+      "price": 999
+    },
+    {
+      "id": 12,
+      "img": "./img/wClothing/2.jpg",
+      "title": "Футболка Levi's The Perfect Tee Reflective 17369-1774",
+      "price": 1095
+    },
+    {
+      "id": 13,
+      "img": "./img/wClothing/3.jpg",
+      "title": "Платье Trendyol TPRSS22EL0487 Pink",
+      "price": 588
+    },
+    {
+      "id": 14,
+      "img": "./img/wClothing/4.jpg",
+      "title": "Шорты Medicine RS22-SZD070-97X Dusty Green",
+      "price": 618
+    },
+    {
+      "id": 15,
+      "img": "./img/wClothing/5.png",
+      "title": "Спортивные шорты Puma Classics Waistband Shorts 53627616",
+      "price": 1029
+    },
+    {
+      "id": 16,
+      "img": "./img/wClothing/6.jpg",
+      "title": " Футболка Puma Ess Puma Tee W 84719504 Dark Gray Heather",
+      "price": 709
+    },
+    {
+      "id": 17,
+      "img": "./img/wClothing/7.jpg",
+      "title": "Шорты Tally Weijl SSHPUSAND-GS",
+      "price": 609
+    },
+    {
+      "id": 18,
+      "img": "./img/wClothing/8.png",
+      "title": "Худи Puma Classics Oversized Hoodie 53506001 Puma Black",
+      "price": 1829
+    },
+    {
+      "id": 19,
+      "img": "./img/wClothing/9.jpg",
+      "title": "Вышиванка Lugin 8А116 Синяя",
+      "price": 1020
+    },
+    {
+      "id": 20,
+      "img": "./img/wClothing/10.jpg",
+      "title": "Платье Dressa 54070 Сиреневое",
+      "price": 799
+    },
+    {
+      "id": 21,
+      "img": "./img/wClothing/1.jpg",
+      "title": "Сережки у вигляді котиків зі срібла 925 Dadiverin",
+      "price": 650
+    },
+    {
+      "id": 22,
+      "img": "./img/wClothing/2.jpg",
+      "title": "Цепочка шелковая с серебряной застежкой Черная",
+      "price": 250
+    },
+    {
+      "id": 23,
+      "img": "./img/wClothing/3.jpg",
+      "title": "Підвісок срібний \"Трезуб\"",
+      "price": 368
+    },
+    {
+      "id": 24,
+      "img": "./img/wClothing/4.jpg",
+      "title": "Шкатулка для украшений, сундук для бижутерии, органайзер для украшений",
+      "price": 989
+    },
+    {
+      "id": 25,
+      "img": "./img/wClothing/5.png",
+      "title": "Сережки з хрестиками зі срібла 925 Dadiverin",
+      "price": 420
+    },
+    {
+      "id": 26,
+      "img": "./img/wClothing/6.jpg",
+      "title": "Серебряный мужской браслет Плоский Бисмарк 4мм чернёный",
+      "price": 582
+    },
+    {
+      "id": 27,
+      "img": "./img/electronics/1.jpg",
+      "title": "Мобильный телефон Apple iPhone 13 Pro 128GB Graphite",
+      "price": 44999
+    },
+    {
+      "id": 28,
+      "img": "./img/electronics/2.jpg",
+      "title": "Мобильный телефон Samsung Galaxy Flip 4 8/256GB Bora Purple",
+      "price": 42999
+    },
+    {
+      "id": 29,
+      "img": "./img/electronics/3.jpg",
+      "title": "Мобильный телефон Samsung Galaxy S21 FE 6/128GB Lavender",
+      "price": 26399
+    },
+    {
+      "id": 30,
+      "img": "./img/electronics/4.jpg",
+      "title": "Мобильный телефон Apple iPhone 11 64GB Black Slim Box (MHDA3)",
+      "price": 618
+    },
+    {
+      "id": 31,
+      "img": "./img/electronics/5.jpg",
+      "title": "Телевизор Hisense 55E76GQ + Саундбар Hisense HS205 (6745795)",
+      "price": 19999
+    },
+    {
+      "id": 32,
+      "img": "./img/electronics/6.jpg",
+      "title": "Телевизор Samsung Frame QE32LS03TCUXUA",
+      "price": 19999
+    },
+    {
+      "id": 33,
+      "img": "./img/electronics/7.jpg",
+      "title": "Фотоаппарат Sony Alpha а7 IV 28-70mm Kit Black (ILCE7M4KB.CEC)",
+      "price": 109999
+    },
+    {
+      "id": 34,
+      "img": "./img/electronics/8.jpg",
+      "title": "Камера моментальной печати Polaroid Now Pink (9056)",
+      "price": 6499
+    },
+    {
+      "id": 35,
+      "img": "./img/electronics/9.jpg",
+      "title": "Камера моментальной печати Polaroid Go Black (009070)",
+      "price": 5999
+    },
+    {
+      "id": 36,
+      "img": "./img/electronics/10.jpg",
+      "title": "Фотоаппарат Canon EOS R6 RF 24-105mm F4-7.1 IS STM Black",
+      "price": 123799
+    }
+  ]
+}

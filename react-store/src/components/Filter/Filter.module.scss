@@ -1,11 +1,36 @@
-.wrapper {
+.wrapper__form {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 200px;
+  max-width: 550px;
+
+  input {
+    border: 1px solid rgba(0, 0, 0, 0.80);
+    outline: 0;
+  }
 }
 
-
-.inputSearch {
-  display: inline-block;
+.form__search {
   margin-bottom: 25px;
 }
 
+.form__searchInput {
+  width: 250px;
+  margin-bottom: 15px;
+  padding: 5px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.40);
+}
+
+.wrapper__price {
+  font-family: 'Ubuntu', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+
+  input {
+    width: 70px;
+  }
+}

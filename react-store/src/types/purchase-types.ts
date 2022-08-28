@@ -1,12 +1,3 @@
-export interface IPurchaseModalState {
+export interface IModalState {
   isVisible: boolean,
-  purchaseValues: IPurchaseValues
-}
-
-export interface IPurchaseValues {
-  firstName: string
-  lastName: string
-  phone: string
-  email: string
-  card: string
 }

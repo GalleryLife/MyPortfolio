@@ -20,23 +20,23 @@
   }
 }
 
-.iconWrapper {
+.wrapper__icon {
   margin-bottom: 20px;
 }
 
-.closeIcon {
+.icon {
   position: absolute;
   cursor: pointer;
   top: 15px;
   left: 10px;
 }
 
-.countWrapper {
+.wrapper__count {
   display: flex;
   align-items: center;
 }
 
-.actionsWrapper {
+.count__actions {
   display: flex;
   flex-direction: column;
   margin-left: 10px;

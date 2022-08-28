@@ -1,29 +1,29 @@
 export interface IGodsInitialState {
   gods: IGods[]
   status: boolean
-  searchValue: string
-  category: string[]
+  pageSize: number
+  activePage: number
+  filterData: IFilterData
+  totalProductsCount: number
 }
 
 export interface IGods {
-  id: number,
+  id: number
   title: string
   price: number
-  description: string
-  category: string
   image: string
-  rating: IRating
 }
 
-interface IRating {
-  rate: number
-  count: number
+export interface IGetGodsPayload {
+  page?: number
+  fromForm?: boolean
+  title?: string | undefined
+  maxPrice?: string | undefined
+  minPrice?: string | undefined
 }
 
-export interface IFilterState {
-  search: ISearch
-}
-
-interface ISearch {
-  value: string
+export interface IFilterData{
+  title: string | undefined
+  maxPrice: string | undefined
+  minPrice: string | undefined
 }

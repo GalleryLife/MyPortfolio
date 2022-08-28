@@ -1,26 +1,31 @@
-.appWrapper {
+.wrapper {
   margin: 25px auto 0 auto;
   text-align: center;
   width: 1250px;
   padding: 0 15px;
 }
 
-.header {
+.wrapper__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 55px;
 }
 
-.logo {
+.header__logo {
   text-align: center;
   display: inline-block;
   color: #000;
 }
 
-.headerLogo {
+.logo__title {
   font-size: 25px;
   text-transform: uppercase;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
 }
 
 .actions {

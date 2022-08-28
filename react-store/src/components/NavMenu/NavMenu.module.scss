@@ -1,17 +1,16 @@
-.wrapperItems {
+.wrapper {
   display: flex;
-
 }
 
-.item:not(:last-child) {
+.wrapper__link:not(:last-child) {
   margin-right: 55px;
 }
 
-.item {
+.wrapper__link {
   line-height: 25px;
 }
 
-.item:hover {
+.wrapper__link:hover {
   a {
     border-bottom: 3px solid #000;
   }

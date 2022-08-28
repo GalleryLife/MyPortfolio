@@ -1,36 +1,55 @@
-import {createAsyncThunk, createSlice, Draft, PayloadAction} from '@reduxjs/toolkit';
 import axios from 'axios';
-import {IGods, IGodsInitialState} from '../types/gods-types';
-import {CheckboxValueType} from 'antd/es/checkbox/Group';
+import {createAsyncThunk, createSlice, Draft, PayloadAction} from '@reduxjs/toolkit';
+import {IFilterData, IGetGodsPayload, IGods, IGodsInitialState} from '../types/gods-types';
 
 const initialState: IGodsInitialState = {
   gods: [],
-  category: [''],
+  filterData: {
+    title: '',
+    maxPrice: '',
+    minPrice: '',
+  },
+  totalProductsCount: 0,
+  activePage: 1,
+  pageSize: 9,
   status: false,
-  searchValue: ''
 }
 
 export const getGods = createAsyncThunk(
   'gods/getGods',
-  async (_, {rejectWithValue, dispatch}: any) => {
-    try {
-      const response = await axios('https://fakestoreapi.com/products/')
-      dispatch(setGods(response.data))
-    } catch (error) {
-      return rejectWithValue(error)
-    }
-  }
-)
+  async ({
+    maxPrice,
+    minPrice,
+    page,
+    title,
+    fromForm = false
+  }: IGetGodsPayload, {
+    dispatch,
+    getState
+  }: any) => {
+    const {pageSize, activePage, filterData} = getState().gods
 
-export const filterGods = createAsyncThunk(
-  'gods/getGods',
-  async ({rejectWithValue, dispatch}: any) => {
-    try {
-      const response = await axios('https://fakestoreapi.com/products/')
-      dispatch(selectCategory(response.data))
-    } catch (error) {
-      return rejectWithValue(error)
+    if (!fromForm) {
+      title = filterData.title
+      maxPrice = filterData.maxPrice
+      minPrice = filterData.minPrice
+
+      if (!page) page = activePage
+      dispatch(setActivePage(page!))
+    } else {
+      dispatch(setActivePage(1))
+
+      if (!(title || minPrice || maxPrice)) {
+        title = ''
+        minPrice = ''
+        maxPrice = ''
+      }
     }
+    dispatch(setFilterData({title, minPrice, maxPrice}))
+    await axios(`http://localhost:8888/gods?${minPrice && '&price_gte=' + minPrice}${maxPrice && '&price_lte=' + maxPrice}${title && '&title_like=' + title}`)
+      .then(response => dispatch(setTotalProductsCount(response.data.length)))
+    return axios(`http://localhost:8888/gods?_page=${page}&_limit=${pageSize}${minPrice && '$price_gte=' + minPrice}${maxPrice && '$price_lte=' + maxPrice}${maxPrice}${title && '&title_like=' + title}`)
+      .then(response => response.data)
   }
 )
 
@@ -39,25 +58,22 @@ const godsSlice = createSlice({
   name: 'gods',
   initialState,
   reducers: {
-    setGods(state, action: PayloadAction<IGods[]>) {
-      return {...state, gods: action.payload}
-    },
-    toggleStatus(state) {
+    toggleStatus: (state: Draft<IGodsInitialState>) => {
       state.status = !state.status
     },
-    changeValue: (state, action: PayloadAction<any>) => {
-      state.searchValue = action.payload
+    setTotalProductsCount: (state: Draft<IGodsInitialState>, action: PayloadAction<number>) => {
+      state.totalProductsCount = action.payload
     },
-    searchItem: (state, action: PayloadAction<any>) => {
-      console.log(action.payload.value)
+    setActivePage: (state: Draft<IGodsInitialState>, action: PayloadAction<number>) => {
+      state.activePage = action.payload
     },
-    selectCategory: (state: Draft<any>, action: PayloadAction<CheckboxValueType[] | IGods[]>) => {
-      const {payload} = action
-      console.log(payload)
-      // state.category = payload
-      // console.log(state.category)
-      const index = payload.findIndex(index => index)
-      state.gods = state.gods.filter((item: IGods) => item.category === action.payload[index])
+    setGods(state: Draft<IGodsInitialState>, action: PayloadAction<IGods[]>) {
+      state.gods = action.payload
+    },
+    setFilterData: (state: Draft<IGodsInitialState>, action: PayloadAction<IFilterData>) => {
+      state.filterData.title = action.payload.title
+      state.filterData.minPrice = action.payload.minPrice
+      state.filterData.maxPrice = action.payload.maxPrice
     },
   },
   extraReducers: (builder) => {
@@ -68,10 +84,12 @@ const godsSlice = createSlice({
       .addCase(getGods.fulfilled, (state, action) => {
         godsSlice.caseReducers.toggleStatus(state)
         godsSlice.caseReducers.setGods(state, action)
-        godsSlice.caseReducers.selectCategory(state, action)
+      })
+      .addCase(getGods.rejected, (state) => {
+        godsSlice.caseReducers.toggleStatus(state)
       })
   }
 })
 
-export const {setGods, changeValue, searchItem, selectCategory} = godsSlice.actions
+export const {setActivePage, setTotalProductsCount, setFilterData} = godsSlice.actions
 export default godsSlice.reducer

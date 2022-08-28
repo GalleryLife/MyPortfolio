@@ -1,19 +1,20 @@
 export interface ICartState {
   cart: ICart[]
+  isPurchase: boolean
 }
 
 export interface ICart {
   id: number
-  title: string
   img: string
   price: number
   count: number
+  title: string
 }
 
 export interface ICartPayload {
   id: number
-  title: string
   img: string
+  title: string
   price: number
 }
 

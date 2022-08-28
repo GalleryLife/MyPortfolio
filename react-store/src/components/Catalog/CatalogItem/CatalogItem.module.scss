@@ -1,11 +1,7 @@
 .wrapper {
   border: 1px solid rgba(0, 0, 0, 0.10);
   padding: 15px;
-}
-
-.actions {
-  display: flex;
-  justify-content: space-between;
+  margin-bottom: 50px;
 }
 
 .button {
@@ -13,7 +9,7 @@
   color: #fff;
   padding: 10px 15px;
   border-radius: 2px;
-  width: 110px;
+  width: 210px;
   cursor: pointer;
   transition: linear .3s;
 }
@@ -23,13 +19,14 @@
   color: #000;
 }
 
-.itemInfo {
+.wrapper__info {
   margin-bottom: 10px;
   h2 {
     font-weight: 600;
     margin-bottom: 10px;
   }
   span {
+    font-family: 'Ubuntu', sans-serif;
     display: inline-block;
     opacity: 70%;
     margin-bottom: 15px;
