@@ -13,6 +13,7 @@ const initialState: IGodsInitialState = {
   activePage: 1,
   pageSize: 9,
   status: false,
+  error: false
 }
 
 export const getGods = createAsyncThunk(
@@ -46,10 +47,14 @@ export const getGods = createAsyncThunk(
       }
     }
     dispatch(setFilterData({title, minPrice, maxPrice}))
-    await axios(`http://localhost:8888/gods?${minPrice && '&price_gte=' + minPrice}${maxPrice && '&price_lte=' + maxPrice}${title && '&title_like=' + title}`)
-      .then(response => dispatch(setTotalProductsCount(response.data.length)))
-    return axios(`http://localhost:8888/gods?_page=${page}&_limit=${pageSize}${minPrice && '$price_gte=' + minPrice}${maxPrice && '$price_lte=' + maxPrice}${maxPrice}${title && '&title_like=' + title}`)
-      .then(response => response.data)
+    try {
+      await axios(`http://localost:8888/gods?${minPrice && '&price_gte=' + minPrice}${maxPrice && '&price_lte=' + maxPrice}${title && '&title_like=' + title}`)
+        .then(response => dispatch(setTotalProductsCount(response.data.length)))
+      return axios(`http://localhost:8888/gods?_page=${page}&_limit=${pageSize}${minPrice && '$price_gte=' + minPrice}${maxPrice && '$price_lte=' + maxPrice}${maxPrice}${title && '&title_like=' + title}`)
+        .then(response => response.data)
+    } catch(error){
+      dispatch(errorStatus())
+    }
   }
 )
 
@@ -60,6 +65,9 @@ const godsSlice = createSlice({
   reducers: {
     toggleStatus: (state: Draft<IGodsInitialState>) => {
       state.status = !state.status
+    },
+    errorStatus: (state: Draft<IGodsInitialState>) => {
+      state.error = true
     },
     setTotalProductsCount: (state: Draft<IGodsInitialState>, action: PayloadAction<number>) => {
       state.totalProductsCount = action.payload
@@ -91,5 +99,5 @@ const godsSlice = createSlice({
   }
 })
 
-export const {setActivePage, setTotalProductsCount, setFilterData} = godsSlice.actions
+export const {setActivePage, setTotalProductsCount, setFilterData, errorStatus} = godsSlice.actions
 export default godsSlice.reducer

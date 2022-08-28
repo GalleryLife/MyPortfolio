@@ -1,6 +1,7 @@
 export interface IGodsInitialState {
   gods: IGods[]
   status: boolean
+  error: boolean
   pageSize: number
   activePage: number
   filterData: IFilterData
