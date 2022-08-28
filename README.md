@@ -22,7 +22,7 @@
 <li>React-router</li>
 <li>Redux-persist</li>
 <li>Axios</li>
-<li>useState, useEffect, React.lazy, Suspensem CustomHooks</li>
+<li>useState, useEffect, React.lazy, Suspense, CustomHooks</li>
 <li>classnames</li>
 </ul>  
 <hr>
