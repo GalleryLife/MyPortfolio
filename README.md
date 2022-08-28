@@ -5,6 +5,27 @@
 <li><a href="https://github.com/GalleryLife/MyPortfolio/tree/main/todo-app">ToDo app</a></li>
 </ul>
 
+<h2>React-store</h2>
+<a href="https://github.com/GalleryLife/MyPortfolio/tree/main/react-store">See code</a><br>
+<br>
+<img src="https://user-images.githubusercontent.com/61874265/187076824-0fa3a88e-00a5-482a-9c79-bbeec9d37e2c.png"/>
+<p>The online store that allows you to view goods directly from the server, stores your shopping cart in LocalStorage, offers a shopping simulation, price filter and name search</p>
+<h4>Technologies</h4>
+<ul>
+<li>React</li>
+<li>TypeScript</li>
+<li>Redux-toolkit</li>
+<li>React-redux</li>
+<li>Formik</li>
+<li>Yup</li>
+<li>React-router</li>
+<li>Redux-persist</li>
+<li>Axios</li>
+<li>useState, useEffect, React.lazy, Suspensem CustomHooks</li>
+<li>classnames</li>
+</ul>  
+<hr>
+
 <h2>Weather app</h2>
 <a href="https://github.com/GalleryLife/MyPortfolio/tree/main/weather-app">See code</a><br>
 <br>
