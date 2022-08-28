@@ -1,6 +1,7 @@
 <h1>React/Redux</h1>
 
 <ul>
+<li><a href="https://github.com/GalleryLife/MyPortfolio/tree/main/react-store">React-store</a></li>
 <li><a href="https://github.com/GalleryLife/MyPortfolio/tree/main/weather-app">Weather app</a></li>
 <li><a href="https://github.com/GalleryLife/MyPortfolio/tree/main/todo-app">ToDo app</a></li>
 </ul>
@@ -55,3 +56,15 @@
 <li>useState, useLayoutEffect, customHooks, useRef</li>
 </ul>  
 <hr>
+</br>
+<h1>HTML/SCSS/GULP</h1>
+</br>
+<h2>Fotogram</h2>
+<a href="https://github.com/GalleryLife/MyPortfolio/tree/main/weather-app">See code</a></br>
+<a href="https://fotogram-two.vercel.app">See deploy</a>
+<br>
+<img src="https://user-images.githubusercontent.com/61874265/187077237-57a23a26-3c3d-418f-b9e6-3dfe51def32a.png"/>
+<img src="https://user-images.githubusercontent.com/61874265/187077274-29f425b9-15f4-4572-bfd6-e37c3984fb21.png"/>
+<img src="https://user-images.githubusercontent.com/61874265/187077298-5da21643-a8c2-4f9d-b01f-c0dbc05b2333.png"/>
+<img src="https://user-images.githubusercontent.com/61874265/187077317-5198b406-b5af-477b-9a17-535ae8f1f018.png"/>
+
