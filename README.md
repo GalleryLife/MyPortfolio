@@ -1,7 +1,7 @@
 <h1>React/Redux</h1>
 
 <ul>
-<li><a href="https://github.com/GalleryLife/MyPortfolio/tree/main/react-store">React-store</a></li>
+<li><a target="blank" href="https://github.com/GalleryLife/MyPortfolio/tree/main/react-store">React-store</a></li>
 <li><a href="https://github.com/GalleryLife/MyPortfolio/tree/main/weather-app">Weather app</a></li>
 <li><a href="https://github.com/GalleryLife/MyPortfolio/tree/main/todo-app">ToDo app</a></li>
 </ul>
