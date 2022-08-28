@@ -45,6 +45,7 @@
 
 <h2>ToDo app</h2>
 <a href="https://github.com/GalleryLife/MyPortfolio/tree/main/weather-app">See code</a><br>
+<a href="https://todo-beta-sage.vercel.app">See deploy</a>
 <br>
 <img src="https://user-images.githubusercontent.com/61874265/185787288-fa99d7ac-f0da-4864-8523-a510b1f835a6.png"/>
 <p>Todo app lets you add, edit, complete, and delete tasks while saving the process, even when you restart your browser</p>
