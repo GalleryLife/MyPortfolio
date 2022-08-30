@@ -61,7 +61,7 @@
 <h1>HTML/SCSS/GULP</h1>
 </br>
 <h2>Fotogram</h2>
-<a href="https://github.com/GalleryLife/MyPortfolio/tree/main/weather-app">See code</a></br>
+<a href="https://github.com/GalleryLife/MyPortfolio/tree/main/Fotogram">See code</a></br>
 <a href="https://fotogram-two.vercel.app">See deploy</a>
 <br>
 <img src="https://user-images.githubusercontent.com/61874265/187077237-57a23a26-3c3d-418f-b9e6-3dfe51def32a.png"/>
