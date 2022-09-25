@@ -1,52 +1,53 @@
+import 'antd/dist/antd.css'
 import './App.scss'
-import React, {
-  useRef,
-  useState,
-  useLayoutEffect,
-  ReactEventHandler,
-  ChangeEvent, MouseEventHandler
-} from 'react'
+import React, { useState } from 'react'
 import '../../_helpers/reset.scss'
-import { Input } from 'antd'
 import { PlusOutlined } from '@ant-design/icons'
-import ReactDOM from 'react-dom/client'
+import ModalItem from '../Modal/Modal'
+import ListItems from '../List/List'
+import { useAppDispatch, useAppSelector } from '../../hooks/hooks'
+import { setExpenses } from '../../features/balanceSlice'
+import { IValuesExpenses } from '../../types/balance'
+import Balance from '../Balance/Balance'
 
 const App: React.FC = () => {
-  const [balance, setBalance] = useState('0')
-  const [isEditMode, setEditMode] = useState(false)
-  const editBalance = useRef<HTMLInputElement>(null)
-  useLayoutEffect(() => {
-    if (isEditMode && editBalance) {
-      editBalance.current?.focus()
+  const { expenses, balance } = useAppSelector(({ balanceSlice }) => balanceSlice)
+  const dispatch = useAppDispatch()
+
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const showModal = () => {
+    if (balance > 0) {
+      setIsModalOpen(true)
+    } else {
+      return alert('Total balance 0')
     }
-  }, [isEditMode])
-  const setMode = () => setEditMode(!isEditMode)
-  const endEdit = (event: any) => {
-    if(event.)
   }
-  const setBalanceInput = (event: ChangeEvent<HTMLInputElement>) => setBalance(event.target.value)
+
+  const handleOk = () => {
+    setIsModalOpen(false)
+  }
+
+  const handleCancel = () => {
+    setIsModalOpen(false)
+  }
+
+  const setValuesExpenses = (values: IValuesExpenses) => {
+    dispatch(setExpenses(values))
+  }
 
   return (
-    <section className='wrapper'>
-      <div className='container'>
-        <div className='balance balance__wrapper'>
-          <h1 className='balance__logo'>Total balance</h1>
-          <div>{
-            !isEditMode
-              ? <input
-                ref={editBalance}
-                type='number'
-                className='balance__edit'
-                value={balance}
-                onChange={setBalanceInput}
-                onKeyDown={endEdit}
-              />
-              : <h3 onClick={setMode}>{balance}</h3>
-          }</div>
+    <div>
+      <ModalItem handleOk={handleOk} handleCancel={handleCancel} isModalOpen={isModalOpen}
+        setValuesExpenses={setValuesExpenses}/>
+      <section className='wrapper'>
+        <div className='container'>
+          <Balance />
+          {expenses && <ListItems/>}
+          <PlusOutlined className='add' onClick={showModal}/>
         </div>
-        <PlusOutlined className='add'/>
-      </div>
-    </section>
+      </section>
+    </div>
   )
 }
 
