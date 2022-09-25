@@ -29,7 +29,7 @@ const Balance = () => {
     }
     dispatch(changeBalance(event.target.value))
   }
-
+  console.log('new Branch')
   return (
     <div className='balance balance__wrapper'>
       <h1 className='balance__logo'>Total balance</h1>
