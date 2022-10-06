@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/restrict-plus-operands */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { IBalance } from '../types/balance'
+import { IBalance, ISetExpenses, IValuesExpenses } from '../types/balance'
 
 const data = [
   'Food & drinks',
@@ -36,13 +35,13 @@ export const balanceSlice = createSlice({
     },
     updateBalance: (state) => {
       const initialValue = 0
-      const summ = state.expenses.reduce((accumulator: any, currentValue: any) => 
+      const summ = state.expenses.reduce((accumulator: number, currentValue: IValuesExpenses) => 
         accumulator + currentValue.expenses,
       initialValue)
       state.balance = state.balance - summ
     },
     setExpenses: {
-      reducer: (state, action: PayloadAction<any>) => {
+      reducer: (state, action: PayloadAction<ISetExpenses>) => {
         state.expenses = [
           ...state.expenses, 
           { 
@@ -52,7 +51,7 @@ export const balanceSlice = createSlice({
         ]
         state.balance = state.balance - action.payload.expenses
       },
-      prepare: (category: string, expenses: number | string) => ({ payload: { category, expenses } })
+      prepare: (category: string, expenses: number) => ({ payload: { category, expenses } })
     },
     toggleEditMode: (state) => {
       state.isEdit = !state.isEdit

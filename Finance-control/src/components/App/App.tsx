@@ -27,11 +27,8 @@ const App: React.FC = () => {
     }
   }), [])
   const themeMode = useMemo(() => createTheme(getDesignTokens(theme)), [theme])
-
-  const toggleTheme = () => {
-    colorMode.toggleColorMode()
-  }
-
+  const toggleTheme = (): void => colorMode.toggleColorMode()
+  
   return (
     <ThemeProvider theme={themeMode}>
       <CssBaseline/>

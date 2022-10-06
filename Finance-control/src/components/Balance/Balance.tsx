@@ -1,33 +1,35 @@
-import React, { ChangeEvent, useLayoutEffect, useRef } from 'react'
+import React, { ChangeEvent, useLayoutEffect, useRef, KeyboardEvent } from 'react'
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks'
 import { changeBalance, toggleEditMode, updateBalance } from '../../features/balanceSlice'
 import { Box, TextField } from '@mui/material'
 import { lightBlue } from '@mui/material/colors'
-import { Heading, Text } from '../CustomComponents/CustomComponents'
+import { Heading, Text } from '../../styled/styled'
 
 const Balance = () => {
   const { balance, isEdit, expenses } = useAppSelector(({ balanceSlice }) => balanceSlice)
   const dispatch = useAppDispatch()
-  const options: any = { weekday: 'long' }
-  const date = new Date().getDate()
-  const day = new Intl.DateTimeFormat('en-US', options).format(new Date())
-  const endEdit = (event: any) => {
-    if (event.code === 'Enter') {
-      setBalanceInput(event)
-      setMode()
-    }
-  }
   const editBalance = useRef<HTMLInputElement>(null)
   useLayoutEffect(() => {
     if (isEdit && editBalance) {
       editBalance.current?.focus()
     }
   }, [isEdit])
-  const setMode = () => {
+
+  const options: any = { weekday: 'long' }
+  const date = new Date().getDate()
+  const day = new Intl.DateTimeFormat('en-US', options).format(new Date())
+  const endEdit = (event: KeyboardEvent & ChangeEvent<HTMLInputElement>): void => {
+    if (event.code === 'Enter') {
+      setBalanceInput(event)
+      setMode()
+    }
+  }
+  
+  const setMode = (): void => {
     dispatch(toggleEditMode())
     expenses.length >= 1 && dispatch(updateBalance())
   }
-  const setBalanceInput = (event: ChangeEvent<HTMLInputElement>) => {
+  const setBalanceInput = (event: ChangeEvent<HTMLInputElement>): void => {
     dispatch(changeBalance(event.target.value))
   }
 

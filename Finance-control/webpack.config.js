@@ -66,7 +66,7 @@ module.exports = {
         type: 'asset/resource'
       },
       {
-        test: /\.tsx?$/,
+        test: /\.(tsx|ts|jsx|js)?$/,
         exclude: /node_modules/,
         use: 'ts-loader'
       }

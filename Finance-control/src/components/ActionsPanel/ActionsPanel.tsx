@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 
 const ActionsPanel = () => {
   const dispatch = useAppDispatch()
-  const setMode = () => dispatch(toggleEditMode())
+  const setMode = (): void => { dispatch(toggleEditMode()) }
 
   return (
     <Box sx={{

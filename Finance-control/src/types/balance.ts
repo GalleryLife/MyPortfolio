@@ -11,3 +11,8 @@ export interface IValuesExpenses {
   expenses: number
   id: number | string
 }
+
+export interface ISetExpenses {
+  category: string
+  expenses: number
+}

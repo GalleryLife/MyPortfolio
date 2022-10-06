@@ -1,6 +1,6 @@
 import React from 'react'
 import { useAppSelector } from '../../hooks/hooks'
-import { Text, Heading } from '../CustomComponents/CustomComponents'
+import { Text, Heading } from '../../styled/styled'
 import { Box } from '@mui/material'
 import { lightBlue } from '@mui/material/colors'
 

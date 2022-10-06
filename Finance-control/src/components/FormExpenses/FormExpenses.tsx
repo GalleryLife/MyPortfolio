@@ -1,24 +1,23 @@
-import React, { useState } from 'react'
-import { Box, TextField, Select, FormControl, MenuItem, InputLabel, Button } from '@mui/material'
+import React, { useState, ChangeEvent } from 'react'
+import { Box, TextField, Select, FormControl, MenuItem, InputLabel, Button, SelectChangeEvent } from '@mui/material'
 import { setExpenses } from '../../features/balanceSlice'
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks'
 
 const FormExpenses = () => {
   const { categoryExpenses } = useAppSelector(({ balanceSlice }) => balanceSlice)
-  const [value, setValue] = useState<string | number>('')
-  const [category, setCategory] = useState('')
+  const [value, setValue] = useState(0)
+  const [category, setCategory] = useState<string>('')
   const dispatch = useAppDispatch()
 
-  const handleChangeSelect = (event: any) => {
+  const handleChangeSelect = (event: SelectChangeEvent<string>): void => {
     setCategory(event.target.value)
   }
-  const handleChangeInput = (event: any) => {
+  const handleChangeInput = (event: ChangeEvent<HTMLInputElement>): void => {
     setValue(parseInt(event.target.value))
   }
-  const handleSubmit = (event: any) => {
-    event.preventDefault()
+  const handleSubmit = (): void => {
     dispatch(setExpenses(category, value))
-    setValue('')
+    setValue(0)
     setCategory('')
   }
 
