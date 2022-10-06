@@ -1,4 +1,4 @@
-const plugins = [];
+const plugins = []
 if (process.env.NODE_ENV === 'development') {
   plugins.push('react-refresch/babel')
 }// React hot reloading необходим только в режиме разработки
