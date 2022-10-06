@@ -1,11 +1,26 @@
-import { createSlice, Draft } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
-import type { RootState } from '../store/store'
+/* eslint-disable @typescript-eslint/restrict-plus-operands */
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { IBalance } from '../types/balance'
+
+const data = [
+  'Food & drinks',
+  'Shopping',
+  'Housing',
+  'Transport',
+  'Vehisle',
+  'Life & Entertainment',
+  'Cimmunication, PC',
+  'Financial expenses',
+  'Investments',
+  'Income'
+]
 
 const initialState: IBalance = {
   balance: 0,
-  expenses: []
+  expenses: [],
+  isEdit: false,
+  theme: 'light',
+  categoryExpenses: data
 }
 
 export const balanceSlice = createSlice({
@@ -13,13 +28,46 @@ export const balanceSlice = createSlice({
   initialState,
   reducers: {
     changeBalance: (state, action) => {
-      state.balance = parseInt(action.payload)
+      if (action.payload === '') {
+        state.balance = 0
+      } else { 
+        state.balance = parseInt(action.payload)
+      }
     },
-    setExpenses: (state, action) => {
-      state.expenses = [...state.expenses, { ...action.payload }]
+    updateBalance: (state) => {
+      const initialValue = 0
+      const summ = state.expenses.reduce((accumulator: any, currentValue: any) => 
+        accumulator + currentValue.expenses,
+      initialValue)
+      state.balance = state.balance - summ
+    },
+    setExpenses: {
+      reducer: (state, action: PayloadAction<any>) => {
+        state.expenses = [
+          ...state.expenses, 
+          { 
+            ...action.payload, 
+            id: new Date().getMilliseconds() + Math.random() 
+          }
+        ]
+        state.balance = state.balance - action.payload.expenses
+      },
+      prepare: (category: string, expenses: number | string) => ({ payload: { category, expenses } })
+    },
+    toggleEditMode: (state) => {
+      state.isEdit = !state.isEdit
+    },
+    setTheme: (state) => {
+      state.theme = (state.theme === 'light' ? 'dark' : 'light')
     }
   }
 })
 
-export const { changeBalance, setExpenses } = balanceSlice.actions
+export const {
+  changeBalance,
+  setExpenses,
+  toggleEditMode,
+  setTheme,
+  updateBalance
+} = balanceSlice.actions
 export default balanceSlice.reducer

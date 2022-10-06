@@ -1,9 +1,13 @@
 export interface IBalance {
   balance: number
   expenses: IValuesExpenses[]
+  isEdit: boolean
+  theme: 'light' | 'dark'
+  categoryExpenses: string[]
 }
 
 export interface IValuesExpenses {
-  products: string
-  expenses: string | number
+  category: string
+  expenses: number
+  id: number | string
 }
