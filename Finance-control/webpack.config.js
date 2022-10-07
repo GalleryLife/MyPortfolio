@@ -35,9 +35,10 @@ module.exports = {
     // размещаться итоговый бандл, папка dist в корне приложения
     assetModuleFilename: 'assets/[hash][text][query]', // Все ассеты будут
     // складываться в dist/assets
-    clean: true// Очищает директорию dist перед обновлением бандла
+    clean: true, // Очищает директорию dist перед обновлением бандла
     // Свойство стало доступно с версии 5.20.0, до этого использовался
     // CleanWebpackPlugin
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -65,7 +66,7 @@ module.exports = {
         type: 'asset/resource'
       },
       {
-        test: /\.tsx?$/,
+        test: /\.(tsx|ts|jsx|js)?$/,
         exclude: /node_modules/,
         use: 'ts-loader'
       }
@@ -76,6 +77,7 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   devServer: {
-    hot: false // Включает автоматическую перезагрузку страницы при изменениях
+    hot: false, // Включает автоматическую перезагрузку страницы при изменениях
+    historyApiFallback: true
   }
 }
