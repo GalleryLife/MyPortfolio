@@ -1,61 +1,42 @@
-import React, { useMemo } from 'react'
+import React from 'react'
 import '../../_helpers/reset.scss'
+import styles from './App.module.scss'
 import ListItems from '../List/List'
 import Balance from '../Balance/Balance'
-import {
-  Box,
-  Container,
-  ThemeProvider,
-  createTheme,
-  FormGroup,
-  FormControlLabel,
-  CssBaseline
-} from '@mui/material'
-import { getDesignTokens, MaterialUISwitch } from '../../theme/theme'
+// import { MaterialUISwitch } from '../../theme/theme'
 import ActionsPanel from '../ActionsPanel/ActionsPanel'
-import { setTheme } from '../../features/balanceSlice'
-import { useAppDispatch, useAppSelector } from '../../hooks/hooks'
 import { Route } from 'react-router-dom'
 import FormExpenses from '../FormExpenses/FormExpenses'
+import { Button } from '@mui/material'
+// import { FormControlLabel, FormGroup } from '@mui/material'
 
 const App: React.FC = () => {
-  const dispatch = useAppDispatch()
-  const { theme } = useAppSelector(({ balanceSlice }) => balanceSlice)
-  const colorMode = useMemo(() => ({
-    toggleColorMode: () => {
-      dispatch(setTheme())
-    }
-  }), [])
-  const themeMode = useMemo(() => createTheme(getDesignTokens(theme)), [theme])
-  const toggleTheme = (): void => colorMode.toggleColorMode()
-  
   return (
-    <ThemeProvider theme={themeMode}>
-      <CssBaseline/>
-      <Container maxWidth='lg'>
-        <Box sx={{
-          display: 'flex',
-          mx: 'auto',
-          justifyContent: 'center'
-        }}>
-          <FormGroup>
-            <FormControlLabel control={<MaterialUISwitch onClick={toggleTheme} sx={{ m: 1 }}/>} label={false}/>
-          </FormGroup>
-          <section>
-            <div>
-              <Balance/>
-              <ActionsPanel/>
-              <Route path='/expenses'>
-                <ListItems/>
-              </Route>
-              <Route path='/add_expenses'>
-                <FormExpenses/>
-              </Route>
-            </div>
-          </section>
-        </Box>
-      </Container>
-    </ThemeProvider>
+    <div className={styles.container}>
+      {/* <FormGroup>
+        <FormControlLabel control={<MaterialUISwitch sx={{ m: 1 }}/>} label={false}/>
+      </FormGroup> */}
+      <header className={styles.header}>
+        <h1><a href="#">Logo</a></h1>
+        <Button variant='outlined'>Log in</Button>
+      </header>
+      <section>
+        <div className={styles.wrapper}>
+          <div className={styles.actions}>
+            <ActionsPanel/>
+          </div>
+          <div className={styles.pages}>
+            <Balance/>
+            <Route path='/expenses'>
+              <ListItems/>
+            </Route>
+            <Route path='/add_expenses'>
+              <FormExpenses/>
+            </Route>
+          </div>
+        </div>
+      </section>
+    </div>
   )
 }
 

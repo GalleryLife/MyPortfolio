@@ -1,8 +1,8 @@
 import React, { ChangeEvent, useLayoutEffect, useRef, KeyboardEvent } from 'react'
+import styles from './Balance.module.scss'
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks'
 import { changeBalance, toggleEditMode, updateBalance } from '../../features/balanceSlice'
-import { Box, TextField } from '@mui/material'
-import { lightBlue } from '@mui/material/colors'
+import { TextField } from '@mui/material'
 import { Heading, Text } from '../../styled/styled'
 
 const Balance = () => {
@@ -15,9 +15,9 @@ const Balance = () => {
     }
   }, [isEdit])
 
-  const options: any = { weekday: 'long' }
+  const month = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(new Date())
   const date = new Date().getDate()
-  const day = new Intl.DateTimeFormat('en-US', options).format(new Date())
+  const day = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(new Date())
   const endEdit = (event: KeyboardEvent & ChangeEvent<HTMLInputElement>): void => {
     if (event.code === 'Enter') {
       setBalanceInput(event)
@@ -34,26 +34,13 @@ const Balance = () => {
   }
 
   return (
-    <Box sx={{
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'space-between',
-      borderRadius: 2,
-      mt: 2,
-      mb: 2,
-      backgroundColor: '#fff',
-      boxShadow: 3
-    }}>
-      <Box sx={{ backgroundColor: lightBlue[500], p: 2, color: '#fff', borderRadius: 2 }}>
-        <Heading>Date</Heading>
+    <div className={styles.wrapper}>
+      <div className={styles.date}>
+        <Heading>{month}</Heading>
         <Text>{date}, {day}</Text>
-      </Box>
-      <Box sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        p: 2
-      }}>
-        <Heading>Total balance</Heading>
+      </div>
+      <div className={styles.balance}>
+        <span>Total balance</span>
         {
           isEdit
             ? <TextField
@@ -66,8 +53,8 @@ const Balance = () => {
             />
             : <Text>$ {balance}</Text>
         }
-      </Box>
-    </Box>
+      </div>
+    </div>
   )
 }
 

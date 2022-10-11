@@ -51,7 +51,7 @@ export const balanceSlice = createSlice({
         ]
         state.balance = state.balance - action.payload.expenses
       },
-      prepare: (category: string, expenses: number) => ({ payload: { category, expenses } })
+      prepare: (category: string, expenses: number, description: string) => ({ payload: { category, expenses, description } })
     },
     toggleEditMode: (state) => {
       state.isEdit = !state.isEdit

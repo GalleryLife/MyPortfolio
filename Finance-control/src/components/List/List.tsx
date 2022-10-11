@@ -1,8 +1,7 @@
 import React from 'react'
+import styles from './List.module.scss'
 import { useAppSelector } from '../../hooks/hooks'
-import { Text, Heading } from '../../styled/styled'
-import { Box } from '@mui/material'
-import { lightBlue } from '@mui/material/colors'
+import { Text } from '../../styled/styled'
 
 const ListItems = () => {
   const { expenses } = useAppSelector(({ balanceSlice }) => balanceSlice)
@@ -10,36 +9,26 @@ const ListItems = () => {
   return (
     <>
       <ul>{expenses.length 
-        ? <Box sx={{ backgroundColor: '#fff', borderRadius: 2, pb: 2 }}>
-          <Box sx={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            color: '#fff',
-            backgroundColor: lightBlue[500],
-            px: 2,
-            mb: 1,
-            boxShadow: 1,
-            borderRadius: 1
-          }}>
-            <Heading>Category</Heading>
-            <Heading>Expenses</Heading>
-          </Box>
-          {expenses.map(item => (
-            <li key={item.id}>
-              <Box sx={{
-                px: 2,
-                mb: 1,
-                display: 'flex',
-                justifyContent: 'space-between',
-                boxShadow: 1
-              }}>
-                <Text>{item.category}</Text>
-                <Text>${item.expenses}</Text>
-              </Box>
-            </li>
-          ))
-          }
-        </Box>
+        ? <div>
+          <div className={styles.heading}>
+            <h3>Category</h3>
+            <h3>Description</h3>
+            <h3>Expenses</h3>
+          </div>
+          <div className={styles.items}>
+            {expenses.map(item => (
+              <li key={item.id}>
+                <div className={styles.item}>
+                  <Text>{item.category}</Text>
+                  <Text className={styles.desc}>{item.description}</Text>
+                  <Text>${item.expenses}</Text>
+                </div>
+                <hr />
+              </li>
+            ))
+            }
+          </div>
+        </div>
         : <Text>No items has been added</Text>
       }
       </ul>

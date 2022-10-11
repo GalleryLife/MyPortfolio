@@ -9,10 +9,12 @@ export interface IBalance {
 export interface IValuesExpenses {
   category: string
   expenses: number
+  description: string
   id: number | string
 }
 
 export interface ISetExpenses {
   category: string
   expenses: number
+  description: string
 }
