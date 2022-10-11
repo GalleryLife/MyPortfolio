@@ -4,6 +4,7 @@
 <li><a href="https://github.com/GalleryLife/MyPortfolio/tree/main/react-store">React-store</a></li>
 <li><a href="https://github.com/GalleryLife/MyPortfolio/tree/main/weather-app">Weather app</a></li>
 <li><a href="https://github.com/GalleryLife/MyPortfolio/tree/main/todo-app">ToDo app</a></li>
+<li><a href="https://github.com/GalleryLife/MyPortfolio/tree/main/Finance-control">Finance-control</a></li>
 </ul>
 
 <h2>React-store</h2>
@@ -57,12 +58,34 @@
 <li>useState, useLayoutEffect, customHooks, useRef</li>
 </ul>  
 <hr>
+
+<h2>Finance-control</h2>
+<h1>DEVELOPMENT</h1>
+<a href="https://github.com/GalleryLife/MyPortfolio/tree/main/Finance-control">See code</a><br>
+<a href="https://todo-beta-sage.vercel.app">See deploy</a>
+<br>
+<img src="https://user-images.githubusercontent.com/61874265/195072250-a7079ea4-907b-422a-805b-80bdce7b6d8d.png"/>
+<p>You can save your expenses, the plugin automatically makes calculations</p>
+<h4>Technologies</h4>
+<ul>
+<li>React</li>
+<li>TypeScript</li>
+<li>Webpack</li>
+<li>Redux-toolkit</li>
+<li>React</li>
+<li>React</li>
+<li>React</li>
+<li>Material UI</li>
+<li>LocalStorage</li>
+<li>useState, customHooks, useRef</li>
+</ul>  
+<hr>
+
 </br>
 <h1>HTML/SCSS/GULP</h1>
 </br>
 <h2>Fotogram</h2>
 <a href="https://github.com/GalleryLife/MyPortfolio/tree/main/Fotogram">See code</a></br>
-<a href="https://fotogram-two.vercel.app">See deploy</a>
 <br>
 <img src="https://user-images.githubusercontent.com/61874265/187077237-57a23a26-3c3d-418f-b9e6-3dfe51def32a.png"/>
 <img src="https://user-images.githubusercontent.com/61874265/187077274-29f425b9-15f4-4572-bfd6-e37c3984fb21.png"/>
