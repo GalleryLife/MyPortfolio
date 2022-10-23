@@ -4,7 +4,6 @@
 <li><a href="https://github.com/GalleryLife/MyPortfolio/tree/main/react-store">React-store</a></li>
 <li><a href="https://github.com/GalleryLife/MyPortfolio/tree/main/weather-app">Weather app</a></li>
 <li><a href="https://github.com/GalleryLife/MyPortfolio/tree/main/todo-app">ToDo app</a></li>
-<li><a href="https://github.com/GalleryLife/MyPortfolio/tree/main/Finance-control">Finance-control</a></li>
 </ul>
 
 <h2>React-store</h2>
